@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Training App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="course_details_tabs">
+        <item>Course Details</item>
+        <item>Lessons</item>
+    </string-array>
+
+    <string-array name="sql_create_statements">
+        <item>
+DROP TABLE IF EXISTS courses
+        </item>
+        <item>
+CREATE TABLE IF NOT EXISTS courses(
+_id INTEGER PRIMARY KEY AUTOINCREMENT,
+title TEXT,
+author TEXT,
+descrlong TEXT,
+category INTEGER,
+thumb_id INTEGER
+)
+        </item>
+        <item>
+INSERT INTO courses(title,author,descrlong,category,thumb_id)
+VALUES (\'Intro to Dog Training\', \'smcaton\', \'This is a introduction to Training.\',\'pets\', 0)
+        </item>
+
+         <item>
+DROP TABLE IF EXISTS lessons
+        </item>
+        <item>
+CREATE TABLE IF NOT EXISTS lessons(
+_id INTEGER PRIMARY KEY AUTOINCREMENT,
+courseId INTEGER,
+title TEXT,
+descrlong TEXT,
+thumb_id INTEGER,
+video_type TEXT,
+video_id TEXT
+)
+        </item>
+        <item>
+INSERT INTO lessons(courseId, title,descrlong,thumb_id, video_type, video_id)
+VALUES (1, \'Lesson 1\', \'This is a introduction to Training... Lesson 1\', 1, \'youtube\', \'asdf\')
+        </item>
+        <item>
+INSERT INTO lessons(courseId, title,descrlong,thumb_id, video_type, video_id)
+VALUES (1, \'Lesson 2\', \'This is a introduction to Training... Lesson 2\', 1,\'youtube\', \'asdf\')
+        </item>
+        <item>
+INSERT INTO lessons(courseId, title,descrlong,thumb_id, video_type, video_id)
+VALUES (1, \'Lesson 3\', \'This is a introduction to Training... Lesson 3\', 1, \'youtube\', \'asdf\')
+        </item>
+
+    </string-array>
+    <string name="title_activity_course_details">CourseDetailsActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="label_course_descr">Course Description:</string>
+    \<string name="label_course_author">Author:</string>
+</resources>
