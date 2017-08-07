@@ -207,9 +207,9 @@ public final class CourseCatalog {
             sb.append(TABLE);
             sb.append("(");
             sb.append(Lesson._ID).append(" INTEGER PRIMARY KEY AUTOINCREMENT ");
-            sb.append(Lesson.TITLE).append(" TEXT ");
-            sb.append(Lesson.TITLE).append(" TEXT ");
-            sb.append(Lesson.TITLE).append(" TEXT ");
+            sb.append(Lesson.TITLE).append(" TEXT ").append(",");
+            sb.append(Lesson.TITLE).append(" TEXT ").append(",");
+            sb.append(Lesson.TITLE).append(" TEXT ").append(",");
             sb.append(Lesson.TITLE).append(" TEXT ");
 
             /*
