@@ -1,31 +1,32 @@
 package com.toxxic.trainingapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import com.toxxic.trainingapp.provider.CourseCatalog;
+import com.toxxic.trainingapp.util.ActivityHelper;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+        implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,22 +55,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         ListView list = (ListView) findViewById(R.id.listView);
-        list.setAdapter(  new CourseListAdapter(this, getCourseListCursor()) );
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d(this.getClass().getName(), "**************** METHOD: onItemClick ****************");
-                Intent i = new Intent();
-                i.setAction(CourseDetailsActivity.ACTION);
-                TextView tvCourseId = (TextView)view.findViewById(R.id.tvCourseId);
-                int courseId = Integer.parseInt((String)tvCourseId.getText());
-                i.putExtra(CourseDetailsActivity.EXTRA_ID, courseId);
-                i.setType("text/plain");
-
-                startActivity(i);
-            }
-        });
+        list.setAdapter(new CourseListAdapter(this, getCourseListCursor()));
+        list.setOnItemClickListener(this);
     }
 
     private Cursor getCourseListCursor() {
@@ -152,8 +139,17 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    protected static final class CourseListAdapter extends CursorAdapter
-    {
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Log.d(this.getClass().getName(), "**************** METHOD: onItemClick ****************");
+        TextView tvCourseId = (TextView) view.findViewById(R.id.tvCourseId);
+        int courseId = Integer.parseInt((String) tvCourseId.getText());
+        ActivityHelper.showCourse(MainActivity.this, courseId);
+    }
+
+
+    protected static final class CourseListAdapter extends CursorAdapter {
         public CourseListAdapter(Context context, Cursor c) {
             super(context, c, 0);
         }
@@ -181,6 +177,7 @@ public class MainActivity extends AppCompatActivity
          */
         @Override
         public void bindView(View view, Context context, Cursor cursor) {
+
             // Find fields to populate in inflated template
             TextView tvCourseTitle = (TextView) view.findViewById(R.id.tvCourseTitle);
             TextView tvCourseDescr = (TextView) view.findViewById(R.id.tvCourseDescr);
@@ -189,9 +186,11 @@ public class MainActivity extends AppCompatActivity
             CourseCatalog.Course course = CourseCatalog.Course.createInstanceFromCursor(cursor);
 
             // Populate fields with extracted properties
-            tvId.setText(course.getId());
+            tvId.setText(course.getId() + "");
+            tvId.setVisibility(TextView.INVISIBLE);
             tvCourseTitle.setText(course.getTitle());
             tvCourseDescr.setText(course.getDescription());
+
         }
 
     }

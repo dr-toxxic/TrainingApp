@@ -1,6 +1,7 @@
 package com.toxxic.trainingapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -13,12 +14,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.AdapterView;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -223,7 +226,25 @@ public class CourseDetailsActivity extends AppCompatActivity {
             Context ctxt = container.getContext();
             int courseId = getArguments().getInt(CourseDetailsActivity.EXTRA_ID);
             list.setAdapter(  new LessonListAdapter(ctxt,  getLessonsListCursor(ctxt, courseId ) ) );
+            list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Log.d(this.getClass().getName(), "**************** METHOD: onItemClick ****************");
 
+
+                    TextView tvCourseId = (TextView) view.findViewById(R.id.tvCourseId);
+                    TextView tvLessonId = (TextView) view.findViewById(R.id.tvLessonId);
+                    int course_id = Integer.parseInt((String) tvCourseId.getText());
+                    int lesson_id = Integer.parseInt((String) tvLessonId.getText());
+
+                    Intent i = new Intent();
+                    i.setAction(LessonDetailsActivity.ACTION);
+                    i.putExtra(LessonDetailsActivity.EXTRA_COURSE_ID, course_id);
+                    i.putExtra(LessonDetailsActivity.EXTRA_LESSON_ID, lesson_id);
+                    i.setType("text/plain");
+                    startActivity(i);
+                }
+            });
             return rootView;
         }
         private Cursor getLessonsListCursor(Context context, int courseId)

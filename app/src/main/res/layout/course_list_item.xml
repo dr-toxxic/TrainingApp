@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="68dp"
         android:layout_height="68dp"
-        android:id="@+id/imageView2"
+        android:id="@+id/ivThumbnail"
         android:minHeight="50dp"
         android:minWidth="50dp"
         android:src="@drawable/ic_menu_slideshow"
@@ -41,7 +41,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
+        android:id="@+id/ivChevron"
         android:layout_column="2"
         android:src="@android:drawable/ic_media_play"
         android:layout_row="0"
