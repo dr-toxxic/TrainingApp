@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +14,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <provider
+            android:name=".provider.FeedProvider"
+            android:authorities="com.toxxic.trainingapp.feed.provider"
+            android:enabled="true"
+            android:exported="true" />
+
+        <provider
+            android:name=".provider.TrainingContentProvider"
+            android:authorities="com.toxxic.trainingapp.provider"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".sync.SyncService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -21,12 +41,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <provider
-            android:name=".provider.TrainingContentProvider"
-            android:authorities="com.toxxic.trainingapp.provider"
-            android:enabled="true"
-            android:exported="true" />
 
         <activity
             android:name=".CourseDetailsActivity"
@@ -68,14 +82,21 @@
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="com.toxxic.trainingapp.intent.action.VIDEO_PLAYER_FULL" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="text/plain" />
             </intent-filter>
-
         </activity>
-    </application>
 
+        <activity android:name=".CourseCatalogActivity">
+            <intent-filter>
+                <action android:name="com.toxxic.trainingapp.intent.action.COURSE_CATALOG" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+
+
+    </application>
 
 </manifest>

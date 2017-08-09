@@ -3,6 +3,7 @@ package com.toxxic.trainingapp.util;
 import android.content.Context;
 import android.content.Intent;
 
+import com.toxxic.trainingapp.CourseCatalogActivity;
 import com.toxxic.trainingapp.CourseDetailsActivity;
 import com.toxxic.trainingapp.FullscreenActivity;
 import com.toxxic.trainingapp.LessonDetailsActivity;
@@ -37,6 +38,12 @@ public class ActivityHelper {
         i.putExtra(LessonDetailsActivity.EXTRA_COURSE_ID, course_id);
         i.putExtra(LessonDetailsActivity.EXTRA_LESSON_ID, lesson_id);
         i.setType("text/plain");
+        ctx.startActivity(i);
+    }
+
+    public static void showCatalog(Context ctx) {
+        Intent i = new Intent();
+        i.setAction(CourseCatalogActivity.ACTION);
         ctx.startActivity(i);
     }
 }

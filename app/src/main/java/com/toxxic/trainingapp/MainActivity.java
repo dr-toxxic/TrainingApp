@@ -21,9 +21,11 @@ import android.widget.AdapterView;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.toxxic.trainingapp.provider.CourseCatalog;
 import com.toxxic.trainingapp.util.ActivityHelper;
+import com.toxxic.trainingapp.util.SyncUtils;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
@@ -107,6 +109,19 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
+        switch (item.getItemId()) {
+            // If the user clicks the "Refresh" button.
+            case R.id.menu_refresh:
+                Context context = getApplicationContext();
+                CharSequence text = "Refresh";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+
+                SyncUtils.TriggerRefresh();
+                return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -118,22 +133,23 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         Log.d(this.getClass().getName(), "item: " + item);
-
-        if (id == R.id.nav_my_courses) {
-
-        } else if (id == R.id.nav_about) {
-
-        } else if (id == R.id.nav_catalog) {
-
-        } else if (id == R.id.nav_my_courses) {
-
-        } else if (id == R.id.nav_help) {
-
-        } else if (id == R.id.nav_settings) {
-
-        } else if (id == R.id.nav_account) {
+        switch (id) {
+            case R.id.nav_catalog:
+                ActivityHelper.showCatalog(this);
+                break;
+            case R.id.nav_my_courses:
+                break;
+            case R.id.nav_about:
+                break;
+            case R.id.nav_help:
+                break;
+            case R.id.nav_settings:
+                break;
+            case R.id.nav_account:
+                break;
 
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

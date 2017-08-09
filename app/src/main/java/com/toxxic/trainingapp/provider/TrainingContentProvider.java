@@ -12,7 +12,6 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.toxxic.trainingapp.R;
-import com.toxxic.trainingapp.provider.CourseCatalog;
 
 
 public class TrainingContentProvider extends ContentProvider {
