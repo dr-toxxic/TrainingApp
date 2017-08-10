@@ -2,11 +2,14 @@ package com.toxxic.trainingapp.util;
 
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
 import com.toxxic.trainingapp.CourseCatalogActivity;
 import com.toxxic.trainingapp.CourseDetailsActivity;
 import com.toxxic.trainingapp.FullscreenActivity;
 import com.toxxic.trainingapp.LessonDetailsActivity;
+import com.toxxic.trainingapp.MainActivity;
+import com.toxxic.trainingapp.SettingsActivity;
 import com.toxxic.trainingapp.VideoPlayerActivity;
 
 /**
@@ -45,5 +48,43 @@ public class ActivityHelper {
         Intent i = new Intent();
         i.setAction(CourseCatalogActivity.ACTION);
         ctx.startActivity(i);
+    }
+
+    public static void showSettings(Context ctx) {
+        Intent i = new Intent();
+        i.setAction(SettingsActivity.ACTION);
+        ctx.startActivity(i);
+    }
+
+    public static void showAccount(Context ctx) {
+        CharSequence text = "Account Not Implemented";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(ctx, text, duration);
+        toast.show();
+    }
+
+    public static void showHelp(Context ctx) {
+        CharSequence text = "Help Not Implemented";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(ctx, text, duration);
+        toast.show();
+    }
+
+    public static void showAbout(Context ctx) {
+        CharSequence text = "About Not Implemented";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(ctx, text, duration);
+        toast.show();
+    }
+
+    public static void showMyCourses(Context ctx) {
+        CharSequence text = "Not Implemented";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(ctx, text, duration);
+        toast.show();
     }
 }

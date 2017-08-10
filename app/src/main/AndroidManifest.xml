@@ -19,7 +19,6 @@
             android:authorities="com.toxxic.trainingapp.feed.provider"
             android:enabled="true"
             android:exported="true" />
-
         <provider
             android:name=".provider.TrainingContentProvider"
             android:authorities="com.toxxic.trainingapp.provider"
@@ -41,7 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".CourseDetailsActivity"
             android:label="@string/title_activity_course_details"
@@ -82,21 +80,29 @@
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="com.toxxic.trainingapp.intent.action.VIDEO_PLAYER_FULL" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-
         <activity android:name=".CourseCatalogActivity">
             <intent-filter>
                 <action android:name="com.toxxic.trainingapp.intent.action.COURSE_CATALOG" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings">
+            <intent-filter>
+                <action android:name="com.toxxic.trainingapp.intent.action.SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
 
 
-
-
+        </activity>
     </application>
 
 </manifest>

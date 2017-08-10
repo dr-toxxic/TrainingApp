@@ -112,13 +112,6 @@ public class MainActivity extends AppCompatActivity
         switch (item.getItemId()) {
             // If the user clicks the "Refresh" button.
             case R.id.menu_refresh:
-                Context context = getApplicationContext();
-                CharSequence text = "Refresh";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-
                 SyncUtils.TriggerRefresh();
                 return true;
         }
@@ -138,14 +131,19 @@ public class MainActivity extends AppCompatActivity
                 ActivityHelper.showCatalog(this);
                 break;
             case R.id.nav_my_courses:
+                ActivityHelper.showMyCourses(this);
                 break;
             case R.id.nav_about:
+                ActivityHelper.showAbout(this);
                 break;
             case R.id.nav_help:
+                ActivityHelper.showHelp(this);
                 break;
             case R.id.nav_settings:
+                ActivityHelper.showSettings(this);
                 break;
             case R.id.nav_account:
+                ActivityHelper.showAccount(this);
                 break;
 
         }
