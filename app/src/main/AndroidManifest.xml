@@ -2,11 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.toxxic.trainingapp">
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Required for fetching feed data. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Required to register a SyncStatusObserver to display a "syncing..." progress indicator. -->
     <uses-permission android:name="android.permission.READ_SYNC_STATS" />
-    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <!-- Required to enable our SyncAdapter after it's created. -->
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <!-- Required because we're manually creating a new account. -->
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -25,10 +35,35 @@
             android:enabled="true"
             android:exported="true" />
 
+        <!--
+        This service implements our SyncAdapter. It needs to be exported, so that the system
+        sync framework can access it.
+        -->
         <service
             android:name=".sync.SyncService"
-            android:enabled="true"
-            android:exported="true" />
+            android:exported="true">
+
+            <!--
+            This intent filter is required. It allows the system to launch our sync service
+            as needed.
+            -->
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <!-- This points to a required XML file which describes our SyncAdapter. -->
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/syncadapter" />
+        </service>
+        <service android:name=".service.GenericAccountService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
 
         <activity
             android:name=".MainActivity"
@@ -52,7 +87,9 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-        <activity android:name=".LessonDetailsActivity">
+        <activity
+            android:name=".LessonDetailsActivity"
+            android:label="@string/title_activity_lesson_details">
             <intent-filter>
                 <action android:name="com.toxxic.trainingapp.intent.action.LESSON_DETAILS" />
 
@@ -74,19 +111,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FullscreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_fullscreen"
-            android:theme="@style/FullscreenTheme">
-            <intent-filter>
-                <action android:name="com.toxxic.trainingapp.intent.action.VIDEO_PLAYER_FULL" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".CourseCatalogActivity">
+            android:name=".CourseCatalogActivity"
+            android:label="@string/title_activity_course_catalog"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="com.toxxic.trainingapp.intent.action.COURSE_CATALOG" />
 
@@ -98,11 +125,17 @@
             android:label="@string/title_activity_settings">
             <intent-filter>
                 <action android:name="com.toxxic.trainingapp.intent.action.SETTINGS" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
-
         </activity>
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"></activity>
     </application>
 
 </manifest>

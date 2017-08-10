@@ -33,7 +33,7 @@ public class FeedContract {
     public static final String CONTENT_AUTHORITY = "com.toxxic.trainingapp.feed.provider";
 
     /**
-     * Base URI. (content://com.example.android.basicsyncadapter)
+     * Base URI. (content://com.toxxic.trainingapp.catalog.basicsyncadapter)
      */
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 

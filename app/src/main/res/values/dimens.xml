@@ -10,4 +10,5 @@
     <dimen name="text_margin">16dp</dimen>
     <dimen name="action_button_min_width">56dp</dimen>
     <dimen name="indeterminate_progress_size">32dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
 </resources>

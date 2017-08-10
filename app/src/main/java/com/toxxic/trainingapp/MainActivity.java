@@ -30,6 +30,8 @@ import com.toxxic.trainingapp.util.SyncUtils;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
 
+    public static final String ACTION = "android.intent.action.MAIN";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,14 +120,13 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
-
-    @SuppressWarnings("StatementWithEmptyBody")
+    
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        Log.d(this.getClass().getName(), "item: " + item);
+        Log.d(this.getClass().getSimpleName(), "item: " + item);
         switch (id) {
             case R.id.nav_catalog:
                 ActivityHelper.showCatalog(this);
@@ -156,7 +157,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Log.d(this.getClass().getName(), "**************** METHOD: onItemClick ****************");
+        Log.d(getClass().getSimpleName(), "**************** METHOD: onItemClick ****************");
         TextView tvCourseId = (TextView) view.findViewById(R.id.tvCourseId);
         int courseId = Integer.parseInt((String) tvCourseId.getText());
         ActivityHelper.showCourse(MainActivity.this, courseId);

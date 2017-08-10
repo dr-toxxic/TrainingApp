@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\syncadapter.xml",
+        "source": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\bundles\\debug\\res\\xml\\syncadapter.xml"
+    },
+    {
+        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\authenticator.xml",
+        "source": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\bundles\\debug\\res\\xml\\authenticator.xml"
+    }
+]

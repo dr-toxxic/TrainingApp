@@ -1,5 +1,6 @@
 package com.toxxic.trainingapp.provider;
 
+import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.BaseColumns;
@@ -16,7 +17,7 @@ public final class CourseCatalog {
             Uri.parse("content://" + AUTHORITY);
 
     /**
-     * Class CourseCatalog.Course
+     * Class CourseCatalogContent.Course
      */
     public static final class Course implements BaseColumns {
 
@@ -32,12 +33,12 @@ public final class CourseCatalog {
         /**
          * The MIME type of {@link #CONTENT_URI} providing a directory of words.
          */
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/" + CONTENT_TYPE_PREFIX + TABLE;
+        public static final String CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_TYPE_PREFIX + TABLE;
 
         /**
          * The MIME type of a {@link #CONTENT_URI} sub-directory of a single word.
          */
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/" + CONTENT_TYPE_PREFIX + TABLE;
+        public static final String CONTENT_ITEM_TYPE = ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_TYPE_PREFIX + TABLE;
 
         public static final String[] DEFAULT_PROJECTION =
                 {

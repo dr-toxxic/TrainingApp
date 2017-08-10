@@ -9,5 +9,5 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context="com.toxxic.trainingapp.fragment.EntryListFragment"
+    tools:context="com.toxxic.trainingapp.fragment.CourseCatalogFragment"
     tools:listitem="@layout/fragment_entry" />

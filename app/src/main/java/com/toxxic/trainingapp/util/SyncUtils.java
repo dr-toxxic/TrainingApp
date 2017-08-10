@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 
 import com.toxxic.trainingapp.provider.FeedContract;
+import com.toxxic.trainingapp.service.GenericAccountService;
 
 
 /**

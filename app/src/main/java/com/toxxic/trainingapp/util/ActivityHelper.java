@@ -6,11 +6,11 @@ import android.widget.Toast;
 
 import com.toxxic.trainingapp.CourseCatalogActivity;
 import com.toxxic.trainingapp.CourseDetailsActivity;
-import com.toxxic.trainingapp.FullscreenActivity;
 import com.toxxic.trainingapp.LessonDetailsActivity;
 import com.toxxic.trainingapp.MainActivity;
 import com.toxxic.trainingapp.SettingsActivity;
 import com.toxxic.trainingapp.VideoPlayerActivity;
+import com.toxxic.trainingapp.catalog.basicsyncadapter.EntryListActivity;
 
 /**
  * Created by smcaton on 8/8/2017.
@@ -43,10 +43,14 @@ public class ActivityHelper {
         i.setType("text/plain");
         ctx.startActivity(i);
     }
-
+    public static void showMyCourses(Context ctx) {
+        Intent i = new Intent();
+        i.setAction(MainActivity.ACTION);
+        ctx.startActivity(i);
+    }
     public static void showCatalog(Context ctx) {
         Intent i = new Intent();
-        i.setAction(CourseCatalogActivity.ACTION);
+        i.setAction(EntryListActivity.ACTION);
         ctx.startActivity(i);
     }
 
@@ -80,11 +84,5 @@ public class ActivityHelper {
         toast.show();
     }
 
-    public static void showMyCourses(Context ctx) {
-        CharSequence text = "Not Implemented";
-        int duration = Toast.LENGTH_SHORT;
 
-        Toast toast = Toast.makeText(ctx, text, duration);
-        toast.show();
-    }
 }
