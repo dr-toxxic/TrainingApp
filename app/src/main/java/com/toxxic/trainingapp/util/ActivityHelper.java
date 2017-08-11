@@ -4,13 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
-import com.toxxic.trainingapp.CourseCatalogActivity;
 import com.toxxic.trainingapp.CourseDetailsActivity;
 import com.toxxic.trainingapp.LessonDetailsActivity;
 import com.toxxic.trainingapp.MainActivity;
 import com.toxxic.trainingapp.SettingsActivity;
 import com.toxxic.trainingapp.VideoPlayerActivity;
-import com.toxxic.trainingapp.catalog.basicsyncadapter.EntryListActivity;
+import com.toxxic.trainingapp.catalog.EntryListActivity;
 
 /**
  * Created by smcaton on 8/8/2017.
@@ -49,13 +48,17 @@ public class ActivityHelper {
         ctx.startActivity(i);
     }
     public static void showCatalog(Context ctx) {
-        Intent i = new Intent();
-        i.setAction(EntryListActivity.ACTION);
+        Intent i = new Intent(ctx, EntryListActivity.class);
+
+        //Intent i = new Intent();
+        //i.setAction(EntryListActivity.ACTION);
+
         ctx.startActivity(i);
     }
 
     public static void showSettings(Context ctx) {
         Intent i = new Intent();
+
         i.setAction(SettingsActivity.ACTION);
         ctx.startActivity(i);
     }

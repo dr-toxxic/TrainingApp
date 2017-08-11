@@ -10,8 +10,9 @@
     <dimen name="margin_tiny">4dp</dimen>
     <dimen name="vertical_page_margin">@dimen/margin_medium</dimen>
     <string name="account_name">FeedSync Service</string>
-    <string name="app_name">BasicSyncAdapter</string>
+    <string name="catalog_app_name">Course Catalog</string>
     <string name="description_refresh">Refresh</string>
+    <string name="feed_url">http://trainingapp.purplepenguin.net/feed/</string>
     <string name="intro_message">
         
         
@@ -28,6 +29,7 @@
     </string>
     <string name="loading">Waiting for sync...</string>
     <string name="title_entry_detail">Entry Detail</string>
+    <string name="title_entry_list">BasicSyncAdapter</string>
     <style name="AppTheme" parent="Theme.Sample"/>
     <style name="Theme.Base" parent="android:Theme.Light"/>
     <style name="Theme.Sample" parent="Theme.Base"/>

@@ -16,12 +16,12 @@
         "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
-    },
-    {
         "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_layout.xml",
         "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_item_material.xml",

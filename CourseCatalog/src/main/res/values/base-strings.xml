@@ -16,7 +16,7 @@
 -->
 
 <resources>
-    <string name="app_name">BasicSyncAdapter</string>
+    <string name="catalog_app_name">Course Catalog</string>
     <string name="intro_message">
         <![CDATA[
         

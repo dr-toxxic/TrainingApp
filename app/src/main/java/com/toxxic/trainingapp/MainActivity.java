@@ -21,11 +21,10 @@ import android.widget.AdapterView;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.toxxic.trainingapp.catalog.SyncUtils;
 import com.toxxic.trainingapp.provider.CourseCatalog;
 import com.toxxic.trainingapp.util.ActivityHelper;
-import com.toxxic.trainingapp.util.SyncUtils;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {

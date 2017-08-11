@@ -140,10 +140,6 @@
         "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\design_ic_visibility.png",
-        "source": "C:\\Users\\smcaton\\.android\\build-cache\\b9a97636f00b261907508ef74e6f5ae69361a7d3\\output\\res\\drawable-hdpi-v4\\design_ic_visibility.png"
-    },
-    {
         "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
         "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
@@ -158,10 +154,6 @@
     {
         "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
         "source": "C:\\smcaton\\TrainingApp\\CourseCatalog\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\design_ic_visibility_off.png",
-        "source": "C:\\Users\\smcaton\\.android\\build-cache\\b9a97636f00b261907508ef74e6f5ae69361a7d3\\output\\res\\drawable-hdpi-v4\\design_ic_visibility_off.png"
     },
     {
         "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png",

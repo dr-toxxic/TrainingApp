@@ -17,7 +17,10 @@ limitations under the License.
 
 <resources>
     <string name="account_name">FeedSync Service</string>
+    <string name="title_entry_list">BasicSyncAdapter</string>
     <string name="title_entry_detail">Entry Detail</string>
     <string name="loading">Waiting for sync...</string>
     <string name="description_refresh">Refresh</string>
+    <string name="feed_url">http://trainingapp.purplepenguin.net/feed/atom/</string>
+
 </resources>
