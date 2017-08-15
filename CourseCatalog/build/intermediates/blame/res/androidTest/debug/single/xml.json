@@ -5,6 +5,6 @@
     },
     {
         "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\authenticator.xml",
-        "source": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\bundles\\debug\\res\\xml\\authenticator.xml"
+        "source": "C:\\smcaton\\TrainingApp\\common\\build\\intermediates\\bundles\\default\\res\\xml\\authenticator.xml"
     }
 ]

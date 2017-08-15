@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_indicator_material.xml",
-        "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
-    },
-    {
         "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_material.xml",
         "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
@@ -28,16 +28,16 @@
         "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\drawable\\abc_dialog_material_background.xml"
     },
     {
-        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\drawable\\notification_tile_bg.xml",
-        "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\drawable\\notification_tile_bg.xml"
+        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
         "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
         "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
-        "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+        "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\smcaton\\.android\\build-cache\\3545971d62e7ab5cebebecf4d6ba16f87905b47d\\output\\res\\drawable\\notification_tile_bg.xml"
     },
     {
         "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_clear_material.xml",

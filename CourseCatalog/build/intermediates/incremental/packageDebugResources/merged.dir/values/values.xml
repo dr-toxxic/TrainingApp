@@ -12,7 +12,7 @@
     <string name="account_name">FeedSync Service</string>
     <string name="catalog_app_name">Course Catalog</string>
     <string name="description_refresh">Refresh</string>
-    <string name="feed_url">http://trainingapp.purplepenguin.net/feed/</string>
+    <string name="feed_url">http://trainingapp.purplepenguin.net/feed/atom/</string>
     <string name="intro_message">
         
         

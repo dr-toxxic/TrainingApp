@@ -19,5 +19,5 @@ limitations under the License.
                        android:accountType="com.toxxic.trainingapp.catalog.account"
                        android:icon="@drawable/ic_launcher"
                        android:smallIcon="@drawable/ic_launcher"
-                       android:label="@string/catalog_app_name"
+                       android:label="@string/label_account_authenticator"
         />

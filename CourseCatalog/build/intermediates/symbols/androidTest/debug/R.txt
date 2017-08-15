@@ -776,11 +776,13 @@ int string catalog_app_name 0x7f060022
 int string description_refresh 0x7f060023
 int string feed_url 0x7f060024
 int string intro_message 0x7f060025
-int string loading 0x7f060026
+int string label_account_authenticator 0x7f060026
+int string lib_name_common 0x7f060027
+int string loading 0x7f060028
 int string search_menu_title 0x7f060013
 int string status_bar_notification_info_overflow 0x7f060014
-int string title_entry_detail 0x7f060027
-int string title_entry_list 0x7f060028
+int string title_entry_detail 0x7f060029
+int string title_entry_list 0x7f06002a
 int style AlertDialog_AppCompat 0x7f0800a2
 int style AlertDialog_AppCompat_Light 0x7f0800a3
 int style Animation_AppCompat_Dialog 0x7f0800a4

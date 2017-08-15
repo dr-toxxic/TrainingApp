@@ -19,11 +19,16 @@ public class TrainingContentProvider extends ContentProvider {
     private static final String DBNAME = "traning_db";          // Defines the database name
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH); // Creates a UriMatcher object.
 
+    public static final int ROUTE_COURSES = 1;
+    public static final int ROUTE_COURSES_ID = 2;
+    public static final int ROUTE_LESSONS = 3;
+    public static final int ROUTE_LESSONS_ID = 4;
+
     static {
-        sUriMatcher.addURI(CourseCatalog.AUTHORITY, CourseCatalog.Course.TABLE, 1);
-        sUriMatcher.addURI(CourseCatalog.AUTHORITY, CourseCatalog.Course.TABLE + "/#", 2);
-        sUriMatcher.addURI(CourseCatalog.AUTHORITY, CourseCatalog.Lesson.TABLE, 3);
-        sUriMatcher.addURI(CourseCatalog.AUTHORITY, CourseCatalog.Lesson.TABLE + "/#", 4);
+        sUriMatcher.addURI(CourseCatalog.AUTHORITY, CourseCatalog.Course.TABLE, ROUTE_COURSES);
+        sUriMatcher.addURI(CourseCatalog.AUTHORITY, CourseCatalog.Course.TABLE + "/#", ROUTE_COURSES_ID);
+        sUriMatcher.addURI(CourseCatalog.AUTHORITY, CourseCatalog.Lesson.TABLE, ROUTE_LESSONS);
+        sUriMatcher.addURI(CourseCatalog.AUTHORITY, CourseCatalog.Lesson.TABLE + "/#", ROUTE_LESSONS_ID);
     }
 
     private MainDatabaseHelper mOpenHelper; // Defines a handle to the database helper object. The MainDatabaseHelper class is defined below
@@ -49,6 +54,7 @@ public class TrainingContentProvider extends ContentProvider {
         db = mOpenHelper.getReadableDatabase();
         String table = getTable(uri);
         ret = db.delete(table, selection, selectionArgs);
+        db.close();
         return ret;
     }
 
@@ -58,21 +64,19 @@ public class TrainingContentProvider extends ContentProvider {
         String type = "";
         int match = sUriMatcher.match(uri);
         switch (match) {
-            case 1:
+            case ROUTE_COURSES:
                 type = CourseCatalog.Course.CONTENT_TYPE;
                 break;
-            case 2:
+            case ROUTE_COURSES_ID:
                 type = CourseCatalog.Course.CONTENT_ITEM_TYPE;
                 break;
-            case 3:
+            case ROUTE_LESSONS:
                 type = CourseCatalog.Lesson.CONTENT_TYPE;
                 break;
-            case 4:
+            case ROUTE_LESSONS_ID:
                 type = CourseCatalog.Lesson.CONTENT_ITEM_TYPE;
                 break;
         }
-
-
 
         return type;
     }

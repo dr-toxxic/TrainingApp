@@ -5,6 +5,6 @@
     },
     {
         "merged": "C:\\smcaton\\TrainingApp\\CourseCatalog\\build\\intermediates\\res\\merged\\release\\xml\\authenticator.xml",
-        "source": "C:\\smcaton\\TrainingApp\\CourseCatalog\\src\\main\\res\\xml\\authenticator.xml"
+        "source": "C:\\smcaton\\TrainingApp\\common\\build\\intermediates\\bundles\\default\\res\\xml\\authenticator.xml"
     }
 ]

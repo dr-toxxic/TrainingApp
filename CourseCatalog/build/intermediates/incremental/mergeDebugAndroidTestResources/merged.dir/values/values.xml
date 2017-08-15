@@ -409,7 +409,7 @@
     <string name="account_name">FeedSync Service</string>
     <string name="catalog_app_name">Course Catalog</string>
     <string name="description_refresh">Refresh</string>
-    <string name="feed_url">http://trainingapp.purplepenguin.net/feed/</string>
+    <string name="feed_url">http://trainingapp.purplepenguin.net/feed/atom/</string>
     <string name="intro_message">
         
         
@@ -424,6 +424,8 @@
         
         
     </string>
+    <string name="label_account_authenticator">Authenticator</string>
+    <string name="lib_name_common">Common</string>
     <string name="loading">Waiting for sync...</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>

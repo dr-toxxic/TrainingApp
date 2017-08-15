@@ -50,6 +50,7 @@
     -->
     <application
         android:allowBackup="true"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <uses-library android:name="android.test.runner" />
         <!-- Main activity, responsible for showing a list of feed entries. -->
@@ -99,12 +100,12 @@
                 android:resource="@xml/syncadapter" />
         </service>
         <!--
-        This implements the account we'll use as an attachment point for our SyncAdapter. Since
-        our SyncAdapter doesn't need to authenticate the current user (it just fetches a public RSS
-        feed), this account's implementation is largely empty.
+             This implements the account we'll use as an attachment point for our SyncAdapter. Since
+                our SyncAdapter doesn't need to authenticate the current user (it just fetches a public RSS
+                feed), this account's implementation is largely empty.
 
-        It's also possible to attach a SyncAdapter to an existing account provided by another
-        package. In that case, this element could be omitted here.
+                It's also possible to attach a SyncAdapter to an existing account provided by another
+                package. In that case, this element could be omitted here.
         -->
         <service android:name="com.toxxic.trainingapp.common.accounts.GenericAccountService" >
 

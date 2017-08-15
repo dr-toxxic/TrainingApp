@@ -1,0 +1,4 @@
+<resources>
+    <string name="lib_name_common">Common</string>
+    <string name="label_account_authenticator">Authenticator</string>
+</resources>
