@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.content.SyncStatusObserver;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -178,6 +179,12 @@ public class EntryListFragment extends ListFragment
         setListAdapter(mAdapter);
         setEmptyText(getText(R.string.loading));
         getLoaderManager().initLoader(0, null, this);
+
+
+        AsyncCallWS task = new AsyncCallWS();
+        //Call execute
+        task.execute();
+
     }
 
     @Override
@@ -352,4 +359,30 @@ public class EntryListFragment extends ListFragment
         }
     };
 
+    private class AsyncCallWS extends AsyncTask<String, Void, Void> {
+        @Override
+        protected Void doInBackground(String... params) {
+            Log.i(getClass().getSimpleName(), "doInBackground");
+            WebserviceConnector.getPosts("");
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            Log.i(getClass().getSimpleName(), "onPostExecute");
+
+        }
+
+        @Override
+        protected void onPreExecute() {
+            Log.i(getClass().getSimpleName(), "onPreExecute");
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            Log.i(getClass().getSimpleName(), "onProgressUpdate");
+        }
+
+    }
 }
