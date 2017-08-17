@@ -43,8 +43,8 @@ public class ActivityHelper {
         ctx.startActivity(i);
     }
     public static void showMyCourses(Context ctx) {
-        Intent i = new Intent();
-        i.setAction(MainActivity.ACTION);
+        Intent i = new Intent(ctx, MainActivity.class);
+        //i.setAction(MainActivity.ACTION);
         ctx.startActivity(i);
     }
     public static void showCatalog(Context ctx) {

@@ -41,6 +41,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.toxxic.trainingapp.catalog.net.WebserviceConnector;
 import com.toxxic.trainingapp.common.accounts.GenericAccountService;
 import com.toxxic.trainingapp.catalog.provider.FeedContract;
 

@@ -1,6 +1,5 @@
 package com.toxxic.trainingapp.catalog;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 

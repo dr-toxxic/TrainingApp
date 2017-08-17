@@ -1,6 +1,7 @@
 package com.toxxic.trainingapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -22,14 +23,11 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.toxxic.trainingapp.catalog.SyncUtils;
 import com.toxxic.trainingapp.provider.CourseCatalog;
 import com.toxxic.trainingapp.util.ActivityHelper;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
-
-    public static final String ACTION = "android.intent.action.MAIN";
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +56,22 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         ListView list = (ListView) findViewById(R.id.listView);
-        list.setAdapter(new CourseListAdapter(this, getCourseListCursor()));
-        list.setOnItemClickListener(this);
+        list.setAdapter(  new CourseListAdapter(this, getCourseListCursor()) );
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d(this.getClass().getName(), "**************** METHOD: onItemClick ****************");
+                Intent i = new Intent();
+                i.setAction(CourseDetailsActivity.ACTION);
+                TextView tvCourseId = (TextView)view.findViewById(R.id.tvCourseId);
+                int courseId = Integer.parseInt((String)tvCourseId.getText());
+                i.putExtra(CourseDetailsActivity.EXTRA_ID, courseId);
+                i.setType("text/plain");
+
+                startActivity(i);
+            }
+        });
     }
 
     private Cursor getCourseListCursor() {
@@ -110,60 +122,41 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
-        switch (item.getItemId()) {
-            // If the user clicks the "Refresh" button.
-            case R.id.menu_refresh:
-                SyncUtils.TriggerRefresh();
-                return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
-    
+
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        Log.d(this.getClass().getSimpleName(), "item: " + item);
-        switch (id) {
-            case R.id.nav_catalog:
-                ActivityHelper.showCatalog(this);
-                break;
-            case R.id.nav_my_courses:
-                ActivityHelper.showMyCourses(this);
-                break;
-            case R.id.nav_about:
-                ActivityHelper.showAbout(this);
-                break;
-            case R.id.nav_help:
-                ActivityHelper.showHelp(this);
-                break;
-            case R.id.nav_settings:
-                ActivityHelper.showSettings(this);
-                break;
-            case R.id.nav_account:
-                ActivityHelper.showAccount(this);
-                break;
+        Log.d(this.getClass().getName(), "item: " + item);
+
+        if (id == R.id.nav_my_courses) {
+            ActivityHelper.showMyCourses(this);
+        } else if (id == R.id.nav_about) {
+            ActivityHelper.showAbout(this);
+
+        } else if (id == R.id.nav_catalog) {
+            ActivityHelper.showCatalog( this);
+
+        } else if (id == R.id.nav_help) {
+            ActivityHelper.showHelp(this);
+
+        } else if (id == R.id.nav_settings) {
+            ActivityHelper.showSettings(this);
+        } else if (id == R.id.nav_account) {
 
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Log.d(getClass().getSimpleName(), "**************** METHOD: onItemClick ****************");
-        TextView tvCourseId = (TextView) view.findViewById(R.id.tvCourseId);
-        int courseId = Integer.parseInt((String) tvCourseId.getText());
-        ActivityHelper.showCourse(MainActivity.this, courseId);
-    }
-
-
-    protected static final class CourseListAdapter extends CursorAdapter {
+    protected static final class CourseListAdapter extends CursorAdapter
+    {
         public CourseListAdapter(Context context, Cursor c) {
             super(context, c, 0);
         }
@@ -191,20 +184,18 @@ public class MainActivity extends AppCompatActivity
          */
         @Override
         public void bindView(View view, Context context, Cursor cursor) {
-
             // Find fields to populate in inflated template
+
             TextView tvCourseTitle = (TextView) view.findViewById(R.id.tvCourseTitle);
             TextView tvCourseDescr = (TextView) view.findViewById(R.id.tvCourseDescr);
-            TextView tvId = (TextView) view.findViewById(R.id.tvCourseId);
+            //TextView tvId = (TextView) view.findViewById(R.id.tvCourseId);
 
             CourseCatalog.Course course = CourseCatalog.Course.createInstanceFromCursor(cursor);
 
             // Populate fields with extracted properties
-            tvId.setText(course.getId() + "");
-            tvId.setVisibility(TextView.INVISIBLE);
+            //tvId.setText(course.getId());
             tvCourseTitle.setText(course.getTitle());
             tvCourseDescr.setText(course.getDescription());
-
         }
 
     }
