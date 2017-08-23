@@ -188,12 +188,12 @@ public class MainActivity extends AppCompatActivity
 
             TextView tvCourseTitle = (TextView) view.findViewById(R.id.tvCourseTitle);
             TextView tvCourseDescr = (TextView) view.findViewById(R.id.tvCourseDescr);
-            //TextView tvId = (TextView) view.findViewById(R.id.tvCourseId);
+            TextView tvId = (TextView) view.findViewById(R.id.tvCourseId);
 
             CourseCatalog.Course course = CourseCatalog.Course.createInstanceFromCursor(cursor);
 
             // Populate fields with extracted properties
-            //tvId.setText(course.getId());
+            tvId.setText(course.getId( ) + "");
             tvCourseTitle.setText(course.getTitle());
             tvCourseDescr.setText(course.getDescription());
         }

@@ -17,12 +17,13 @@ package com.toxxic.trainingapp.common.logger;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.*;
 import android.widget.TextView;
 
 /** Simple TextView which is used to output log data received through the LogNode interface.
 */
-public class LogView extends TextView implements LogNode {
+public class LogView extends AppCompatTextView implements LogNode {
 
     public LogView(Context context) {
         super(context);
